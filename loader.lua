@@ -1,6 +1,4 @@
-local Loader = {}
-
-function Loader:Create(Name: string, url: string)
+local function Loader:Create(Name: string, url: string)
     local AdvancedLoader = Instance.new("ScreenGui")
     local Window = Instance.new("Frame")
     local LOADERNAME = Instance.new("Frame")
@@ -110,4 +108,4 @@ function Loader:Create(Name: string, url: string)
     end)
 end
 
-return Loader
+_G.LoaderInitiate = Loader:Create(Name: string, url: string)
