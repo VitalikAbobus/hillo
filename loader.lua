@@ -1,6 +1,5 @@
-local Loader = {}
-
-function Loader:Create(Name: string, url: string)
+-- loader.lua (на GitHub)
+local function createLoader(Name, url)
     local AdvancedLoader = Instance.new("ScreenGui")
     local Window = Instance.new("Frame")
     local LOADERNAME = Instance.new("Frame")
@@ -21,7 +20,7 @@ function Loader:Create(Name: string, url: string)
     Window.BackgroundColor3 = Color3.fromRGB(99, 109, 255)
     Window.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Window.BorderSizePixel = 2
-    Window.Position = UDim2.new(0.372057706, 0, 0.242748097, 0)
+    Window.Position = UDim2.new(0.372, 0, 0.243, 0)
     Window.Size = UDim2.new(0, 336, 0, 336)
 
     LOADERNAME.Name = "LOADERNAME"
@@ -29,7 +28,7 @@ function Loader:Create(Name: string, url: string)
     LOADERNAME.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     LOADERNAME.BorderColor3 = Color3.fromRGB(0, 0, 0)
     LOADERNAME.BorderSizePixel = 2
-    LOADERNAME.Position = UDim2.new(0, 0, -0.0565476194, 0)
+    LOADERNAME.Position = UDim2.new(0, 0, -0.056, 0)
     LOADERNAME.Size = UDim2.new(0, 336, 0, 39)
 
     UICorner.Parent = LOADERNAME
@@ -40,7 +39,7 @@ function Loader:Create(Name: string, url: string)
     LoaderTextLabel.BackgroundTransparency = 1.000
     LoaderTextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
     LoaderTextLabel.BorderSizePixel = 0
-    LoaderTextLabel.Position = UDim2.new(0, 0, 0.256410271, 0)
+    LoaderTextLabel.Position = UDim2.new(0, 0, 0.256, 0)
     LoaderTextLabel.Size = UDim2.new(0, 336, 0, 19)
     LoaderTextLabel.Font = Enum.Font.JosefinSans
     LoaderTextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -52,7 +51,7 @@ function Loader:Create(Name: string, url: string)
     CheckKeyButton.BackgroundColor3 = Color3.fromRGB(171, 193, 255)
     CheckKeyButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
     CheckKeyButton.BorderSizePixel = 0
-    CheckKeyButton.Position = UDim2.new(0.202380955, 0, 0.633928597, 0)
+    CheckKeyButton.Position = UDim2.new(0.202, 0, 0.634, 0)
     CheckKeyButton.Size = UDim2.new(0, 200, 0, 50)
     CheckKeyButton.Font = Enum.Font.JosefinSans
     CheckKeyButton.Text = "Check Key"
@@ -68,7 +67,7 @@ function Loader:Create(Name: string, url: string)
     KeyTextBox.BackgroundColor3 = Color3.fromRGB(229, 235, 255)
     KeyTextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
     KeyTextBox.BorderSizePixel = 0
-    KeyTextBox.Position = UDim2.new(0.202380955, 0, 0.15773809, 0)
+    KeyTextBox.Position = UDim2.new(0.202, 0, 0.158, 0)
     KeyTextBox.Size = UDim2.new(0, 200, 0, 133)
     KeyTextBox.Font = Enum.Font.SourceSans
     KeyTextBox.PlaceholderText = "Paste your key here"
@@ -80,7 +79,7 @@ function Loader:Create(Name: string, url: string)
     UICorner_4.Parent = KeyTextBox
 
     -- Добавляем отладку
-    print("Loader UI создано")
+    print("Loader UI создано для: ", Name)
 
     -- Обрабатываем событие нажатия на кнопку
     CheckKeyButton.MouseButton1Click:Connect(function()
@@ -109,5 +108,6 @@ function Loader:Create(Name: string, url: string)
         end
     end)
 end
-getgenv().Library = Library
-return Loader
+
+-- Возвращаем функцию, чтобы можно было вызывать в экзекуторе
+return createLoader
