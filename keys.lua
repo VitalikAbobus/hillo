@@ -1,1 +1,2 @@
-return {"Key1", "BadBitch"}
+["FreeSteps25"] = 25
+["Secret10"] = 10
